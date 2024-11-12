@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { ApiContext } from "../context/urlContext";
-
 export default function Login() {
   const [username, setUsername] = useState();
   const url = useContext(ApiContext);
