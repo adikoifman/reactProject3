@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 // import { useContext } from "react";
 // import { ApiContext } from "../context/urlContext";
-
+import { useNavigate } from "react-router-dom";
 export default function Login() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [usersArr, setUsersArr] = useState([]);
-  const [login, setLogin] = useState(false);
+
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -30,8 +31,8 @@ export default function Login() {
     if (rightuser.length === 0) {
       alert("username or password not valid");
     } else {
-      localStorage.setItem("currentUser", JSON.stringify(rightuser[0].id));
-      setLogin(true);
+      localStorage.setItem("currentUser", JSON.stringify(rightuser[0]));
+      navigate("/home");
     }
   };
 
@@ -44,7 +45,7 @@ export default function Login() {
       <input onChange={(e) => setUsername(e.target.value)} />
 
       <button onClick={loginHandler}>login</button>
-      <Link to={login ? "/Home" : "/login"}> go inside</Link>
+
       <p>dont have an acount?</p>
       <NavLink to="/signup">signup</NavLink>
     </div>
