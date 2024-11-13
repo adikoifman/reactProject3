@@ -37,6 +37,10 @@ input {
   justify-content: space-between;
   margin: 20px;
 }
+.album {
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }

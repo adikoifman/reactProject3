@@ -1,48 +1,36 @@
-import React from "react";
-import { Outlet, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import apiRequests from "../components/apiRequests";
-import SinglePost from "./SinglePost";
+import React, { useState, useEffect } from "react";
+import Singlealbum from "../components/Singlealbum";
 
 export default function Albums() {
+  const [albumsList, setAlbumsList] = useState([]);
+  let user = JSON.parse(localStorage.getItem("currentUser"));
 
   useEffect(() => {
-    const fetchAlbum = async () => {
+    const fetchAlbums = async () => {
       try {
-        const res = await fetch("http://localhost:3500/albums");
+        const res = await fetch(
+          `http://localhost:3500/albums?userId=${user.id}`
+        );
         if (!res.ok) {
           throw Error("ERORRR!");
         }
         const data = await res.json();
         console.log("data: ", data);
 
-        let currentUser = JSON.parse(localStorage.getItem("currentUser"));
-        // let user = JSON.parse(localStorage.getItem("currentUser"));
-
-        const currentUserAlbum = data.filter(filterByID)
-        console.log("currentUserAlbum: ", currentUserAlbum);
-
-        localStorage.setItem("currentAlbum", JSON.stringify(currentUserAlbum));
-      
-        function filterByID(item) {
-          console.log("item", item)
-          console.log("currentUser", currentUser)
-
-          if (item.userId === JSON.parse(currentUser.id)) {
-            console.log("tywrgkwmrkwrm")
-          }
-          
-        }
+        setAlbumsList(data);
       } catch (err) {
         console.log("err: ", err);
       }
     };
-    
-    (async () => await fetchAlbum())();
+    (async () => await fetchAlbums())();
   }, []);
-
-
-  return <div>Albums</div>;
+  return (
+    <>
+      {albumsList.map((item) => {
+        return <Singlealbum album={item} key={item.id} />;
+      })}
+    </>
+  );
 }
 
 ///show pic album by user id (txt)
