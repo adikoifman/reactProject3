@@ -10,7 +10,7 @@ export default function ToDo() {
   useEffect(() => {
     const fetchTodos = async () => {
       try {
-        const res = await fetch(`http://localhost:3500/todos/`);
+        const res = await fetch("http://localhost:3500/todos/");
         if (!res.ok) {
           throw Error("ERORRR!");
         }
@@ -26,28 +26,43 @@ export default function ToDo() {
       }
     };
     (async () => await fetchTodos())();
-  }, [todoList]);
+  }, []);
 
   const addMision = async () => {
-    const res = await fetch(`http://localhost:3500/todos/`, {
+    console.log("hi");
+    const newMission = {
+      title: newTodo,
+      userId: Number(user.id),
+      id: Math.random() * 10000,
+    };
+    const res = await fetch("http://localhost:3500/todos/", {
       method: "POST",
       headers: { "Content-Type": "Application/json" },
-      body: JSON.stringify({ title: newTodo, userId: Number(user.id) }),
+      body: JSON.stringify(newMission),
     });
-    console.log("hi");
+    setTdoList((prev) => [...prev, newMission]);
+  };
+
+  const deleteMission = async (id) => {
+    const res = await fetch(`http://localhost:3500/todos/${id}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "Application/json" },
+    });
+    console.log("res: ", res);
+    // await fetchTodos();
   };
 
   return (
     <>
       <label>add todo:</label>
       <input onChange={(e) => setnewTodo(e.target.value)} />
-      <button onClick={addMision}>+</button>
+      <button onClick={() => addMision()}>+</button>
       {todoList.map((item) => {
         return (
           <div className="mission">
             {" "}
             <li key={item.id}>{item.title}</li>
-            <button>
+            <button onClick={deleteMission(item.id)}>
               <img
                 width="40"
                 height="auto"
