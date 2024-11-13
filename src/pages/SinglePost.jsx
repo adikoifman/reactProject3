@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Comments from "../components/Comments";
 import apiRequests from "../components/apiRequests";
+
 export default function SinglePost(props) {
   const [picked, setPicked] = useState(false);
   const [comments, setComments] = useState(false);
@@ -34,18 +35,20 @@ export default function SinglePost(props) {
               src="https://www.shutterstock.com/image-vector/chat-speech-bubble-icon-symbol-260nw-1451224709.jpg"
             />
           </button>
+
           {comments && <Comments postId={props.post.id} />}
+          <button onClick={() => deletePost(props.post.id)}>
+            <strong>delete post</strong>
+            <img
+              width="40"
+              height="auto"
+              src="https://www.shutterstock.com/image-vector/trash-can-icon-symbol-delete-260nw-1454137346.jpg"
+            />
+          </button>
         </div>
       )}
       <button onClick={() => showContent()}>
         {picked ? "hide info" : "more info"}
-      </button>
-      <button onClick={() => deletePost(props.post.id)}>
-        <img
-          width="40"
-          height="auto"
-          src="https://www.shutterstock.com/image-vector/trash-can-icon-symbol-delete-260nw-1454137346.jpg"
-        />
       </button>
     </div>
   );
