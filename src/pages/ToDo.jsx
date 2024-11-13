@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import Post from "./Post";
+import apiRequests from "../components/apiRequests";
 export default function ToDo() {
   const [todoList, setTdoList] = useState([]);
   const [newTodo, setnewTodo] = useState("");
@@ -33,7 +34,8 @@ export default function ToDo() {
     const newMission = {
       title: newTodo,
       userId: Number(user.id),
-      id: Math.random() * 10000,
+      id: JSON.stringify(Math.floor(Math.random() * 1000000) + 5),
+      completed: false,
     };
     const res = await fetch("http://localhost:3500/todos/", {
       method: "POST",
@@ -41,15 +43,17 @@ export default function ToDo() {
       body: JSON.stringify(newMission),
     });
     setTdoList((prev) => [...prev, newMission]);
+    console.log("newMission: ", newMission);
   };
 
   const deleteMission = async (id) => {
+    console.log("id: ", id);
     const res = await fetch(`http://localhost:3500/todos/${id}`, {
       method: "DELETE",
-      headers: { "Content-Type": "Application/json" },
     });
     console.log("res: ", res);
-    // await fetchTodos();
+    const updatedList = todoList.filter((item) => item.id !== id);
+    setTdoList(updatedList);
   };
 
   return (
@@ -62,7 +66,7 @@ export default function ToDo() {
           <div className="mission">
             {" "}
             <li key={item.id}>{item.title}</li>
-            <button onClick={deleteMission(item.id)}>
+            <button onClick={() => deleteMission(item.id)}>
               <img
                 width="40"
                 height="auto"

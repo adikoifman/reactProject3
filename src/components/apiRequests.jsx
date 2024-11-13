@@ -1,14 +1,14 @@
 import React from "react";
 
-const apiRequest = async (url, optionsObj = null, errMsg = null) => {
-  let data = null;
+const apiRequests = async (url, optionsObj = null) => {
   try {
     const response = await fetch(url, optionsObj);
-    if (!response.ok) throw Error("Something went wrong");
-    data = await response.json();
+    if (!response.ok) throw Error(" 404 page not found!");
+    const data = await response.json();
   } catch (err) {
-    errMsg = err.message;
+    console.log("err: ", err);
   } finally {
-    return { data, errMsg };
+    return { data };
   }
 };
+export default apiRequests;
