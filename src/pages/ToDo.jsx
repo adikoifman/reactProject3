@@ -5,6 +5,7 @@ import apiRequests from "../components/apiRequests";
 export default function ToDo() {
   const [todoList, setTdoList] = useState([]);
   const [newTodo, setnewTodo] = useState("");
+  const [editTodo, setEditTodo] = useState(null);
 
   let user = JSON.parse(localStorage.getItem("currentUser"));
 
@@ -90,6 +91,7 @@ export default function ToDo() {
               checked
             </button>
             <li key={item.id}>{item.title}</li>
+            {/* <button onClick={() => editing()}>edit</button>; */}
             <button onClick={() => deleteMission(item.id)}>
               <img
                 width="40"
@@ -97,7 +99,6 @@ export default function ToDo() {
                 src="https://www.shutterstock.com/image-vector/trash-can-icon-symbol-delete-260nw-1454137346.jpg"
               />
             </button>
-            ;
           </div>
         );
       })}

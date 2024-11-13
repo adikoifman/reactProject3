@@ -53,7 +53,7 @@ export default function Info() {
 
     console.log("newUserData: ", newUserData);
     console.log(usersArr);
-    navigate("/home");
+    navigate(`/home/${user.id}`);
   }
 
   return (

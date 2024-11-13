@@ -36,6 +36,14 @@ export default function HomeNavbar() {
         >
           posts
         </NavLink>
+        <NavLink
+          to="showInfo"
+          style={({ isActive }) => {
+            return { backgroundColor: isActive ? "pink" : "white" };
+          }}
+        >
+          your details
+        </NavLink>
         <button
           onClick={() => {
             logOut();
