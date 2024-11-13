@@ -234,27 +234,21 @@
   "todos": [
     {
       "userId": 3,
-      "id": "45",
-      "title": "velit soluta adipisci molestias reiciendis harum",
-      "completed": false
-    },
-    {
-      "userId": 3,
       "id": "46",
       "title": "vel voluptatem repellat nihil placeat corporis",
-      "completed": true
+      "completed": false
     },
     {
       "userId": 3,
       "id": "47",
       "title": "nam qui rerum fugiat accusamus",
-      "completed": true
+      "completed": false
     },
     {
       "userId": 3,
       "id": "48",
       "title": "sit reprehenderit omnis quia",
-      "completed": false
+      "completed": true
     },
     {
       "userId": 3,
@@ -554,24 +548,18 @@
       "userId": 7,
       "id": "121",
       "title": "inventore aut nihil minima laudantium hic qui omnis",
-      "completed": true
+      "completed": false
     },
     {
       "userId": 7,
       "id": "122",
       "title": "provident aut nobis culpa",
-      "completed": true
+      "completed": false
     },
     {
       "userId": 7,
       "id": "123",
       "title": "esse et quis iste est earum aut impedit",
-      "completed": false
-    },
-    {
-      "userId": 7,
-      "id": "124",
-      "title": "qui consectetur id",
       "completed": false
     },
     {
@@ -590,7 +578,7 @@
       "userId": 7,
       "id": "127",
       "title": "voluptatem libero consectetur rerum ut",
-      "completed": true
+      "completed": false
     },
     {
       "userId": 7,
@@ -608,13 +596,13 @@
       "userId": 7,
       "id": "130",
       "title": "nulla aliquid eveniet harum laborum libero alias ut unde",
-      "completed": true
+      "completed": false
     },
     {
       "userId": 7,
       "id": "131",
       "title": "qui ea incidunt quis",
-      "completed": false
+      "completed": true
     },
     {
       "userId": 7,
@@ -913,21 +901,6 @@
       "title": ""
     },
     {
-      "id": "111a",
-      "title": "naama",
-      "userId": 7
-    },
-    {
-      "id": "6a05",
-      "title": "rotem",
-      "userId": 7
-    },
-    {
-      "id": "74b3",
-      "title": "dfgnhjm,",
-      "userId": 7
-    },
-    {
       "id": 62.553553016921896,
       "title": "helllooo1",
       "userId": 1
@@ -966,12 +939,6 @@
       "id": "101294",
       "title": "1taliya",
       "userId": 4
-    },
-    {
-      "id": "735611",
-      "title": "naama",
-      "userId": 3,
-      "completed": false
     }
   ],
   "posts": [

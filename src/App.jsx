@@ -8,6 +8,8 @@ import { ApiProvider } from "./context/urlContext";
 import Albums from "./pages/Albums";
 import ToDo from "./pages/ToDo";
 import Post from "./pages/Post";
+// import SinglePost from "./pages/SinglePost";
+// import PostsLayout from "./components/PostsLayout";
 function App() {
   return (
     <ApiProvider>
@@ -17,7 +19,9 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Home />}>
             <Route path="albums" element={<Albums />} />
+
             <Route path="posts" element={<Post />} />
+
             <Route path="todos" element={<ToDo />} />
           </Route>
 
