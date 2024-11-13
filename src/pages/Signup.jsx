@@ -54,10 +54,11 @@ export default function Signup() {
     //   (async () => await postUserData())();
     // }
 
-
+    
     const addUserToData = async () => {
       const newUser = {
         title: username,
+        name: username,
         username: username,
         website: userPassword,
         id: JSON.stringify(Math.floor(Math.random() * 1000000) + 5),
@@ -74,8 +75,9 @@ export default function Signup() {
     };
     addUserToData()
   
+    // localStorage.setItem("currentUser", JSON.stringify(newUser));
     navigate("/info");
-
+    
   }
   
 
