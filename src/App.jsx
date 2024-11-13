@@ -14,18 +14,17 @@ function App() {
   return (
     <ApiProvider>
       <UsersArrProvider>
-        
-          <Router>
-            <Routes>
-              <Route path="/" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/info" element={<Info />} />
-              <Route />
-              <Route path="/home" element={<Home />}>
-                <Route path="albums" element={<Albums />} />
-                <Route path="posts" element={<Post />} />
-                <Route path="todos" element={<ToDo />} />
-              </Route>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/info" element={<Info />} />
+          <Route />
+          <Route path="/home" element={<Home />}>
+            <Route path="albums" element={<Albums />} />
+            <Route path="posts" element={<Post />} />
+            <Route path="todos" element={<ToDo />} />
+          </Route>
 
               <Route path="*" element={<Error />} />
             </Routes>

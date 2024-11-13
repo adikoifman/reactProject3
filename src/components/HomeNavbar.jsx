@@ -8,16 +8,16 @@ export default function HomeNavbar() {
         <NavLink
           to="albums"
           style={({ isActive }) => {
-            return { color: isActive ? "pink" : "grey" };
+            return { backgroundColor: isActive ? "pink" : "white" };
           }}
         >
           albums
         </NavLink>
-        <span> </span>
+
         <NavLink
           to="todos"
           style={({ isActive }) => {
-            return { color: isActive ? "pink" : "grey" };
+            return { backgroundColor: isActive ? "pink" : "white" };
           }}
         >
           todos
@@ -25,7 +25,7 @@ export default function HomeNavbar() {
         <NavLink
           to="posts"
           style={({ isActive }) => {
-            return { color: isActive ? "pink" : "grey" };
+            return { backgroundColor: isActive ? "pink" : "white" };
           }}
         >
           posts

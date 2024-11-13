@@ -37,7 +37,7 @@ export default function ToDo() {
       id: JSON.stringify(Math.floor(Math.random() * 1000000) + 5),
       completed: false,
     };
-    const res = await fetch("http://localhost:3500/todos/", {
+    const res = await apiRequests("http://localhost:3500/todos/", {
       method: "POST",
       headers: { "Content-Type": "Application/json" },
       body: JSON.stringify(newMission),
@@ -48,11 +48,29 @@ export default function ToDo() {
 
   const deleteMission = async (id) => {
     console.log("id: ", id);
-    const res = await fetch(`http://localhost:3500/todos/${id}`, {
+    const res = await apiRequests(`http://localhost:3500/todos/${id}`, {
       method: "DELETE",
     });
     console.log("res: ", res);
     const updatedList = todoList.filter((item) => item.id !== id);
+    setTdoList(updatedList);
+  };
+
+  const checkedMission = async (mission) => {
+    console.log("mission: ", mission);
+    const res = await apiRequests(`http://localhost:3500/todos/${mission.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "Application/json" },
+      body: JSON.stringify({
+        completed: mission.completed === true ? false : true,
+      }),
+    });
+    const updatedList = todoList.map((item) => {
+      if (item.id === mission.id) {
+        item.completed = !item.completed;
+      }
+      return item;
+    });
     setTdoList(updatedList);
   };
 
@@ -63,8 +81,14 @@ export default function ToDo() {
       <button onClick={() => addMision()}>+</button>
       {todoList.map((item) => {
         return (
-          <div className="mission">
+          <div key={item.id} className="mission">
             {" "}
+            <button
+              onClick={() => checkedMission(item)}
+              style={{ background: item.completed ? "green" : "white" }}
+            >
+              checked
+            </button>
             <li key={item.id}>{item.title}</li>
             <button onClick={() => deleteMission(item.id)}>
               <img

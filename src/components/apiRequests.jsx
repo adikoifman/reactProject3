@@ -7,8 +7,6 @@ const apiRequests = async (url, optionsObj = null) => {
     const data = await response.json();
   } catch (err) {
     console.log("err: ", err);
-  } finally {
-    return { data };
   }
 };
 export default apiRequests;
