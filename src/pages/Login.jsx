@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
+  const [password, setPassword] = useState([]);
   const [usersArr, setUsersArr] = useState([]);
 
   useEffect(() => {
@@ -29,7 +30,9 @@ export default function Login() {
   }, []);
 
   const loginHandler = () => {
-    const rightuser = usersArr.filter((item) => item.name === username);
+    const rightuser = usersArr.filter(
+      (item) => item.username === username && item.website === password
+    );
     if (rightuser.length === 0) {
       alert("username or password not valid");
     } else {
@@ -44,7 +47,7 @@ export default function Login() {
       <label>user name:</label>
       <input onChange={(e) => setUsername(e.target.value)} />
       <label>password:</label>
-      <input onChange={(e) => setUsername(e.target.value)} />
+      <input onChange={(e) => setPassword(e.target.value)} />
 
       <button onClick={loginHandler}>login</button>
 

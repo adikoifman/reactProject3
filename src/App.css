@@ -14,8 +14,28 @@
   will-change: filter;
   transition: filter 300ms;
 }
+.post {
+  margin-bottom: 20px;
+  border: 2px solid black;
+}
 .postPicked {
-  border: 2px solid rgb(206, 76, 98);
+  border: 2px solid rgb(228, 141, 156);
+  margin-bottom: 20px;
+}
+#addPost {
+  background-color: blanchedalmond;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input {
+  width: fit-content;
+}
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);

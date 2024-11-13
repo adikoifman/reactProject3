@@ -246,12 +246,6 @@
     },
     {
       "userId": 3,
-      "id": "48",
-      "title": "sit reprehenderit omnis quia",
-      "completed": true
-    },
-    {
-      "userId": 3,
       "id": "49",
       "title": "ut necessitatibus aut maiores debitis officia blanditiis velit et",
       "completed": false
@@ -260,18 +254,6 @@
       "userId": 3,
       "id": "50",
       "title": "cupiditate necessitatibus ullam aut quis dolor voluptate",
-      "completed": true
-    },
-    {
-      "userId": 3,
-      "id": "51",
-      "title": "distinctio exercitationem ab doloribus",
-      "completed": false
-    },
-    {
-      "userId": 3,
-      "id": "52",
-      "title": "nesciunt dolorum quis recusandae ad pariatur ratione",
       "completed": false
     },
     {
@@ -916,16 +898,6 @@
       "userId": 1
     },
     {
-      "id": "452.68625296891685",
-      "title": "rotem",
-      "userId": 2
-    },
-    {
-      "id": " 1335.7865490403497",
-      "title": "rotem",
-      "userId": 2
-    },
-    {
       "id": "9137.01097694836",
       "title": "rotem",
       "userId": 4
@@ -941,8 +913,32 @@
       "userId": 4
     },
     {
-      "id": "953882",
-      "title": "adi",
+      "id": "71642",
+      "title": "rotem's post",
+      "userId": 3,
+      "body": "helloo!!"
+    },
+    {
+      "id": "309474",
+      "title": " hobbies",
+      "userId": 3,
+      "body": "g a song play a guitar,swimng,sin"
+    },
+    {
+      "id": "704465",
+      "title": "rotem",
+      "userId": 3,
+      "body": "hello everyone!"
+    },
+    {
+      "id": "423232",
+      "title": "do the dishes",
+      "userId": 2,
+      "completed": false
+    },
+    {
+      "id": "35892",
+      "title": "go to the supermarket",
       "userId": 2,
       "completed": false
     }
@@ -1010,12 +1006,6 @@
     },
     {
       "userId": 2,
-      "id": "11",
-      "title": "et ea vero quia laudantium autem",
-      "body": "delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus\naccusamus in eum beatae sit\nvel qui neque voluptates ut commodi qui incidunt\nut animi commodi"
-    },
-    {
-      "userId": 2,
       "id": "12",
       "title": "in quibusdam tempore odit est dolorem",
       "body": "itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio"
@@ -1079,18 +1069,6 @@
       "id": "22",
       "title": "dolor sint quo a velit explicabo quia nam",
       "body": "eos qui et ipsum ipsam suscipit aut\nsed omnis non odio\nexpedita earum mollitia molestiae aut atque rem suscipit\nnam impedit esse"
-    },
-    {
-      "userId": 3,
-      "id": "23",
-      "title": "maxime id vitae nihil numquam",
-      "body": "veritatis unde neque eligendi\nquae quod architecto quo neque vitae\nest illo sit tempora doloremque fugit quod\net et vel beatae sequi ullam sed tenetur perspiciatis"
-    },
-    {
-      "userId": 3,
-      "id": "24",
-      "title": "autem hic labore sunt dolores incidunt",
-      "body": "enim et ex nulla\nomnis voluptas quia qui\nvoluptatem consequatur numquam aliquam sunt\ntotam recusandae id dignissimos aut sed asperiores deserunt"
     },
     {
       "userId": 3,
