@@ -1172,26 +1172,6 @@
       "userId": 7
     },
     {
-      "id": "62.553553016921896",
-      "title": "helllooo1",
-      "userId": 1
-    },
-    {
-      "id": "9654.175169098236",
-      "title": "",
-      "userId": 1
-    },
-    {
-      "id": "7102.155675379431",
-      "title": "",
-      "userId": 1
-    },
-    {
-      "id": "7386.9550224879795",
-      "title": "rotem 12",
-      "userId": 1
-    },
-    {
       "id": "8908.49581347038",
       "title": "rotem 12",
       "userId": 1
@@ -1225,6 +1205,12 @@
       "id": "599171",
       "title": "taliya3",
       "userId": 3,
+      "completed": false
+    },
+    {
+      "id": "773579",
+      "title": "gg",
+      "userId": 1,
       "completed": false
     }
   ],
