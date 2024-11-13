@@ -8,6 +8,7 @@ import { ApiProvider } from "./context/urlContext";
 import Albums from "./pages/Albums";
 import ToDo from "./pages/ToDo";
 import Post from "./pages/Post";
+import Info from "./Info"
 function App() {
   return (
     <ApiProvider>
@@ -15,6 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+            <Route path="/info" element={<Info />} />
+          <Route/>
           <Route path="/home" element={<Home />}>
             <Route path="albums" element={<Albums />} />
             <Route path="posts" element={<Post />} />
