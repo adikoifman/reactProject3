@@ -39,7 +39,6 @@ export default function Info() {
 
   function infoSubmitHandler (e) {
     console.log(e)
-    console.log(UsersArry)
     //put req?? post??
     const addDataToUser = async () => {
       const newUserData = {
@@ -57,14 +56,16 @@ export default function Info() {
         headers: { "Content-Type": "Application/json" },
         body: JSON.stringify(newUserData),
       });
-      const updatedUserData = UsersArry.map((item) => {
+      const updatedUserData = usersArr.map((item) => {
         if (item) {
           item.completed = !item.completed
         }
         return item
       });
-      SetUsersArry(updatedUserData);
+      setUsersArr(updatedUserData);
       console.log("newUserData: ", newUserData);
+      console.log(usersArr)
+
     };
     addDataToUser()
   
