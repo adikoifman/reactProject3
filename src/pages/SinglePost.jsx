@@ -8,14 +8,18 @@ export default function SinglePost(props) {
     setPicked((prev) => !prev);
   };
   return (
-    <div key={props.post.id} className="post">
-      <li>
-        <strong>id:</strong>
-        {props.post.id} <br /> <strong>title:</strong>
-        {props.post.title} <br />
-        {picked && `<strong>content:</strong>${props.post.body}`}
-      </li>
-      <button onClick={() => showContent()}>content:</button>
+    <div key={props.post.id} className={picked ? "postPicked" : "post"}>
+      <strong>id:</strong>
+      {props.post.id} <br /> <strong>title:</strong>
+      {props.post.title} <br />
+      {picked && (
+        <div>
+          <p>{props.post.body}</p>
+        </div>
+      )}
+      <button onClick={() => showContent()}>
+        {picked ? "hide info" : "more info"}
+      </button>
     </div>
   );
 }
