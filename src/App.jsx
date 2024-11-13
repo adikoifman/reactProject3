@@ -9,26 +9,29 @@ import { UsersArrProvider } from "./context/useUserArrayContext";
 import Albums from "./pages/Albums";
 import ToDo from "./pages/ToDo";
 import Post from "./pages/Post";
-import Info from "./Info"
+import Info from "./Info";
+import ShowInfo from "./pages/ShowInfo";
+
 function App() {
   return (
     <ApiProvider>
       <UsersArrProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/info" element={<Info />} />
-          <Route />
-          <Route path="/home" element={<Home />}>
-            <Route path="albums" element={<Albums />} />
-            <Route path="posts" element={<Post />} />
-            <Route path="todos" element={<ToDo />} />
-          </Route>
+            <Route />
+            <Route path="/home/:id" element={<Home />}>
+              <Route path="albums" element={<Albums />} />
+              <Route path="posts" element={<Post />} />
+              <Route path="todos" element={<ToDo />} />
+              <Route path="showInfo" element={<ShowInfo />} />
+            </Route>
 
-              <Route path="*" element={<Error />} />
-            </Routes>
-          </Router>
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </Router>
       </UsersArrProvider>
     </ApiProvider>
   );
