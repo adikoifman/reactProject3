@@ -14,8 +14,8 @@ export default function Signup() {
   // const [login, setLogin] = useState(false);
   const navigate = useNavigate();
   // const UsersArrContext = createContext()
-  // const UsersArry = useContext(UsersArrContext);
-  // const SetUsersArry = useContext(SetUsersArrContext);
+  const {usersArr, setUsersArr} = useContext(UsersArrContext);
+  // const setUsersArr = useContext(UsersArrContext);
 
   // useEffect(() => {
   //   const fetchUsers = async () => {
@@ -68,8 +68,8 @@ export default function Signup() {
         headers: { "Content-Type": "Application/json" },
         body: JSON.stringify(newUser),
       });
-      console.log(SetUsersArry)
-      SetUsersArry((prev) => [...prev, newUser]);
+      console.log(setUsersArr)
+      setUsersArr((prev) => [...prev, newUser]);
       console.log("newUser: ", newUser);
     };
     addUserToData()
@@ -92,7 +92,7 @@ export default function Signup() {
         <button onClick={signHandler}>signup</button>
 
         <p>have an acount?</p>
-        <NavLink to="/login">login</NavLink>
+        <NavLink to="/">login</NavLink>
       </div>
     </>
 
