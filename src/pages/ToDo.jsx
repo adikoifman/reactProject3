@@ -49,11 +49,10 @@ export default function ToDo() {
             }
             );
 
-
             console.log('updatedToDo: ', updatedToDo);
             setTdoList(updatedToDo);
             setEditTodoId(0);
-            // setnewTodo("")
+            setnewTodo("")
             return;
         }
         console.log("hi");
