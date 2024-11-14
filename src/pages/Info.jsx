@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState, createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { UsersArrContext} from "../src/context/useUserArrayContext"
+// import { UsersArrContext } from "../src/context/useUserArrayContext";
 
-
+import { UsersArrContext } from "../context/useUserArrayContext";
+import apiRequests from "../components/apiRequests";
 export default function Info() {
   const [name, setname] = useState("");
   const [email, setEmail] = useState("");
@@ -12,8 +13,8 @@ export default function Info() {
   const [city, setCity] = useState("");
   const [phone, setPhone] = useState("");
   const navigate = useNavigate();
-  const {usersArr, setUsersArr} = useContext(UsersArrContext);
-  console.log(usersArr)
+  const { usersArr, setUsersArr } = useContext(UsersArrContext);
+  console.log(usersArr);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -25,21 +26,20 @@ export default function Info() {
         const data = await res.json();
         console.log("data: ", data);
         setUsersArr(data);
-        
       } catch (err) {
         console.log("err: ", err);
       }
     };
     (async () => await fetchUsers())();
   }, []);
-  
-//   useEffect(() => {
-//   console.log("usersArr: ", usersArr)
-// }, [usersArr]);
-let user = JSON.parse(localStorage.getItem("currentUser"));
 
-  function infoSubmitHandler (e) {
-    console.log(e)
+  //   useEffect(() => {
+  //   console.log("usersArr: ", usersArr)
+  // }, [usersArr]);
+  let user = JSON.parse(localStorage.getItem("currentUser"));
+
+  function infoSubmitHandler(e) {
+    console.log(e);
 
     //put req?? post??
     const addDataToUser = async () => {
@@ -61,27 +61,23 @@ let user = JSON.parse(localStorage.getItem("currentUser"));
       });
       const updatedUserData = usersArr.map((item) => {
         if (item) {
-          item.completed = !item.completed
+          item.completed = !item.completed;
         }
-        return item
+        return item;
       });
       setUsersArr(updatedUserData);
       console.log("newUserData: ", newUserData);
-      console.log(usersArr)
-      localStorage.setItem("currentUser", JSON.stringify(newUserData))
-
+      console.log(usersArr);
     };
-    addDataToUser()
-  
-    navigate(`/home/${user.id}`);
+    addDataToUser();
 
-  
+    navigate(`/home/${user.id}`);
   }
 
   return (
     <>
-      <h1>More info about you</h1>
-      <div>
+      <div id="info">
+        <h1>More info about you</h1>
         <label>name:</label>
         <input onChange={(e) => setname(e.target.value)} />
         <label>email:</label>
@@ -94,12 +90,11 @@ let user = JSON.parse(localStorage.getItem("currentUser"));
         <input onChange={(e) => setPhone(e.target.value)} />
         <button onClick={infoSubmitHandler}>submit</button>
 
-
         <p>dont want blaaaa?</p>
         <NavLink to={`/home/${user.id}`}>home</NavLink>
       </div>
     </>
-  )
+  );
 }
 
 // "name": "Leanne Graham",
@@ -124,7 +119,6 @@ let user = JSON.parse(localStorage.getItem("currentUser"));
 //       }
 
 // import axios from 'axios';
-
 
 // function PostAPI() {
 //   const postData = {
@@ -151,7 +145,6 @@ let user = JSON.parse(localStorage.getItem("currentUser"));
 // }
 // export default PostAPI;
 
-
 // const getData = async () => {
 //   try {
 //     const res = await fetch("url", {
@@ -166,7 +159,5 @@ let user = JSON.parse(localStorage.getItem("currentUser"));
 //     console.log("err: ", err);
 //   }
 // }
-
-
 
 // //     </div>

@@ -29,14 +29,24 @@
   flex-direction: column;
   align-items: center;
 }
+#login,
+#signup,
+#info {
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  align-items: center;
+}
 input {
   width: fit-content;
 }
 #navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 20px;
 }
+
 .album {
   border: 2px solid black;
   margin-bottom: 20px;
