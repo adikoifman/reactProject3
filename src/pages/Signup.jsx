@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { UsersArrContext } from "../context/useUserArrayContext";
+import { UsersArrContext} from "../context/useUserArrayContext"
 import apiRequests from "../components/apiRequests";
 export default function Signup() {
   const [username, setUserName] = useState("");
@@ -11,9 +11,20 @@ export default function Signup() {
 
   const navigate = useNavigate();
 
-  const { usersArr, setUsersArr } = useContext(UsersArrContext);
-
+  const {usersArr, setUsersArr} = useContext(UsersArrContext);
+  console.log(usersArr)
+  
   const signHandler = async () => {
+    console.log('usersArr: ', usersArr);
+    const sameuser = usersArr.filter(
+      (item) => item.username === username
+    )
+  //   (item) => item.username === username && item.website === password
+  // );
+    console.log('sameuser: ', sameuser);
+    if(sameuser.length) {
+      return alert("username already taken");
+    }
     const newUser = {
       name: username,
       username: username,
@@ -28,11 +39,11 @@ export default function Signup() {
     console.log(setUsersArr);
     setUsersArr((prev) => [...prev, newUser]);
     console.log("newUser: ", newUser);
-
+    
     localStorage.setItem("currentUser", JSON.stringify(newUser));
     navigate("/info");
   };
-
+  
   return (
     <>
       <div>

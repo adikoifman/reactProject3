@@ -68,6 +68,7 @@ let user = JSON.parse(localStorage.getItem("currentUser"));
       setUsersArr(updatedUserData);
       console.log("newUserData: ", newUserData);
       console.log(usersArr)
+      localStorage.setItem("currentUser", JSON.stringify(newUserData))
 
     };
     addDataToUser()
