@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 export default function Photos(props) {
   const [startIndex, setStartIndex] = useState(0);
   const [photos, setPhotos] = useState([]);
+
   useEffect(() => {
     (async () => await fetchPhotos())();
   }, []);
@@ -10,7 +11,7 @@ export default function Photos(props) {
   const fetchPhotos = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3500/photos?_start=${startIndex}&_limit=5&albumId=${props.albumId}`
+        `http://localhost:3500/photos?_start=${startIndex}&_limit=2&albumId=${props.albumId}`
       );
       if (!res.ok) {
         throw Error("ERORRR!");

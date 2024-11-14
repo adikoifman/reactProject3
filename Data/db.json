@@ -289,8 +289,8 @@
     {
       "userId": 3,
       "id": "46",
-      "title": "vel voluptatem repellat nihil placeat corporis",
-      "completed": false
+      "title": "rotem and adi",
+      "completed": true
     },
     {
       "userId": 3,
@@ -462,20 +462,8 @@
     },
     {
       "userId": 6,
-      "id": "101",
-      "title": "rotem",
-      "completed": false
-    },
-    {
-      "userId": 6,
-      "id": "104",
-      "title": "excepturi non laudantium quo",
-      "completed": false
-    },
-    {
-      "userId": 6,
       "id": "105",
-      "title": "totam quia dolorem et illum repellat voluptas optio",
+      "title": "rotem",
       "completed": true
     },
     {
@@ -1096,18 +1084,6 @@
       "id": "96447",
       "title": "adi",
       "userId": 4,
-      "completed": false
-    },
-    {
-      "id": "327075",
-      "title": "rotem",
-      "userId": 6,
-      "completed": false
-    },
-    {
-      "id": "181024",
-      "title": "shira",
-      "userId": 6,
       "completed": false
     }
   ],

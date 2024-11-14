@@ -4,22 +4,89 @@
   padding: 2rem;
   text-align: center;
 }
+label {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #333;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 200px;
+}
+
+button {
+  padding: 8px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+button img {
+  vertical-align: middle;
+}
+
+.mission {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+}
+
+.mission li {
+  flex: 1;
+  list-style-type: none;
+  font-size: 18px;
+  color: #333;
+}
+
+.mission button {
+  margin-left: 10px;
+  background-color: #f2f2f2;
+}
+
+.mission button:first-of-type {
+  background-color: #fff;
+}
+
+.mission button:hover {
+  background-color: #ccc;
+}
+
+.mission img {
+  width: 35px;
+  height: auto;
+}
+
+.mission button:hover img {
+  opacity: 0.8;
+}
+
 .mission {
   display: flex;
   flex-direction: row;
 }
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
+
 .post {
   margin-bottom: 20px;
   border: 2px solid black;
 }
 .postPicked {
-  border: 2px solid rgb(228, 141, 156);
+  border: 2px solid rgb(193, 192, 227);
   margin-bottom: 20px;
 }
 #addPost {
@@ -43,8 +110,36 @@ input {
 }
 #navbar {
   display: flex;
-  justify-content: center;
-  margin: 20px;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ddd;
+  font-family: Arial, sans-serif;
+}
+h1 {
+  font-size: 50px;
+  color: #333;
+  text-align: center;
+  margin: 20px 0;
+}
+
+#navbar a {
+  padding: 8px 16px;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#navbar a:hover {
+  background-color: #f0e0ff;
+}
+
+#navbar a[style*="background-color: pink"] {
+  background-color: pink !important;
+  color: white;
 }
 
 .album {
