@@ -68,6 +68,7 @@ export default function Info() {
       setUsersArr(updatedUserData);
       console.log("newUserData: ", newUserData);
       console.log(usersArr);
+      localStorage.setItem("currentUser", JSON.stringify(newUserData))
     };
     addDataToUser();
 
