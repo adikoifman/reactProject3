@@ -32,3 +32,7 @@ export default function Albums() {
     </>
   );
 }
+
+///show pic album by user id (txt)
+// array pic user 1
+

@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState, createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UsersArrContext } from "../src/context/useUserArrayContext";
+
 import { UsersArrContext } from "../context/useUserArrayContext";
 import apiRequests from "../components/apiRequests";
 export default function Info() {
@@ -31,28 +33,44 @@ export default function Info() {
     (async () => await fetchUsers())();
   }, []);
 
-  async function infoSubmitHandler(e) {
-    const user = JSON.parse(localStorage.getItem("currentUser"));
-    const newUserData = {
-      title: name,
-      name: name,
-      email: email,
-      adress: adress,
-      city: city,
-      phone: phone,
-    };
-    const res = await apiRequests(`http://localhost:3500/users/${user.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "Application/json" },
-      body: JSON.stringify(newUserData),
-    });
-    localStorage.setItem(
-      "currentUser",
-      JSON.stringify({ ...user, ...newUserData })
-    );
+  //   useEffect(() => {
+  //   console.log("usersArr: ", usersArr)
+  // }, [usersArr]);
+  let user = JSON.parse(localStorage.getItem("currentUser"));
 
-    console.log("newUserData: ", newUserData);
-    console.log(usersArr);
+  function infoSubmitHandler(e) {
+    console.log(e);
+
+    //put req?? post??
+    const addDataToUser = async () => {
+      const newUserData = {
+        title: name,
+        userName: user.username,
+        name: name,
+        email: email,
+        adress: adress,
+        city: city,
+        phone: phone,
+        // id: JSON.stringify(Math.floor(Math.random() * 1000000) + 5),
+        completed: false,
+      };
+      const res = await fetch("http://localhost:3500/users", {
+        method: "PATCH",
+        headers: { "Content-Type": "Application/json" },
+        body: JSON.stringify(newUserData),
+      });
+      const updatedUserData = usersArr.map((item) => {
+        if (item) {
+          item.completed = !item.completed;
+        }
+        return item;
+      });
+      setUsersArr(updatedUserData);
+      console.log("newUserData: ", newUserData);
+      console.log(usersArr);
+    };
+    addDataToUser();
+
     navigate(`/home/${user.id}`);
   }
 
@@ -70,11 +88,76 @@ export default function Info() {
         <input onChange={(e) => setCity(e.target.value)} />
         <label>phone:</label>
         <input onChange={(e) => setPhone(e.target.value)} />
-        <button onClick={() => infoSubmitHandler()}>submit</button>
+        <button onClick={infoSubmitHandler}>submit</button>
 
         <p>dont want blaaaa?</p>
-        <NavLink to="/home">home</NavLink>
+        <NavLink to={`/home/${user.id}`}>home</NavLink>
       </div>
     </>
   );
 }
+
+// "name": "Leanne Graham",
+//       "username": "Bret",
+//       "email": "Sincere@april.biz",
+//       "address": {
+//         "street": "Kulas Light",
+//         "suite": "Apt. 556",
+//         "city": "Gwenborough",
+//         "zipcode": "92998-3874",
+//         "geo": {
+//           "lat": "-37.3159",
+//           "lng": "81.1496"
+//         }
+//       },
+//       "phone": "1-770-736-8031 x56442",
+//       "website": "hildegard.org",
+//       "company": {
+//         "name": "Romaguera-Crona",
+//         "catchPhrase": "Multi-layered client-server neural-net",
+//         "bs": "harness real-time e-markets"
+//       }
+
+// import axios from 'axios';
+
+// function PostAPI() {
+//   const postData = {
+//     type: "posts",
+//     attributes: { title: "Third Post", content: "Trying Out!" }
+//   }
+
+//   const handlePost = async () => {
+//     try {
+//       const response = await axios.post(
+//         'http://localhost:4000/data',
+//         postData
+//       );
+//       console.log(response.data);
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <button onClick={handlePost}>Create Post</button>
+//   );
+// }
+// export default PostAPI;
+
+// const getData = async () => {
+//   try {
+//     const res = await fetch("url", {
+//       method: 'POST',
+//       body: JSON.stringify({})
+//     })
+//     if (res.ok) {
+//       const jsonRes = await res.json();
+//       ////////
+//     }
+//   } catch (err) {
+//     console.log("err: ", err);
+//   }
+// }
+
+// //     </div>

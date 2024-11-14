@@ -924,16 +924,6 @@
       "userId": 1
     },
     {
-      "id": "7386.9550224879795",
-      "title": "rotem 12",
-      "userId": 1
-    },
-    {
-      "id": "8908.49581347038",
-      "title": "rotem 12",
-      "userId": 1
-    },
-    {
       "id": "9137.01097694836",
       "title": "rotem",
       "userId": 4
@@ -1027,6 +1017,12 @@
       "id": "6",
       "title": "dolorem eum magni eos aperiam quia",
       "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
+    },
+    {
+      "userId": 1,
+      "id": "7",
+      "title": "magnam facilis autem",
+      "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
     },
     {
       "userId": 1,

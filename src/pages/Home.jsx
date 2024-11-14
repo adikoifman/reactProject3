@@ -4,9 +4,11 @@ import { Outlet } from "react-router-dom";
 
 export default function Home() {
   let user = JSON.parse(localStorage.getItem("currentUser"));
+  console.log('user.name: ', user);
+
   return (
     <>
-      <h1>welcome {user.name} !</h1>
+      <h1>welcome {user.username || ""} !</h1>
       <HomeNavbar />
       <Outlet />
     </>
