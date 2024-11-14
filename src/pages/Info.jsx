@@ -2,8 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState, createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { UsersArrContext } from "../src/context/useUserArrayContext";
-import apiRequests from "./components/apiRequests";
+import { UsersArrContext } from "../context/useUserArrayContext";
+import apiRequests from "../components/apiRequests";
 export default function Info() {
   const [name, setname] = useState("");
   const [email, setEmail] = useState("");
@@ -58,8 +58,8 @@ export default function Info() {
 
   return (
     <>
-      <h1>More info about you</h1>
-      <div>
+      <div id="info">
+        <h1>More info about you</h1>
         <label>name:</label>
         <input onChange={(e) => setname(e.target.value)} />
         <label>email:</label>

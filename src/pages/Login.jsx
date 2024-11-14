@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { ApiContext } from "../context/urlContext";
+
 import { UsersArrContext } from "../context/useUserArrayContext";
 
 import { useNavigate } from "react-router-dom";
@@ -12,8 +12,6 @@ export default function Login() {
   const [password, setPassword] = useState([]);
 
   const { usersArr, setUsersArr } = useContext(UsersArrContext);
-
-  console.log("hhhh");
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -45,7 +43,7 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div id="login">
       <h1>log in:</h1>
       <label>user name:</label>
       <input onChange={(e) => setUsername(e.target.value)} />
